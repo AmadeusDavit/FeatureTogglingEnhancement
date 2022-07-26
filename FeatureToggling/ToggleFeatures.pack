@@ -1,0 +1,7 @@
+﻿{
+  "FinalizationFeature": { "IsOn": true },
+
+  "ScheduleModifyFeature": { "IsOn": true },
+
+  "ScheduleDisplayModesFeature": { "IsOn": true },
+}

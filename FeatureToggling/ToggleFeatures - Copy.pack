@@ -1,0 +1,157 @@
+﻿{
+  "InitializeRuleEngineClientFeature": { "IsOn": true },
+
+  "RulesFeature": { "IsOn": true },
+
+  //-------region Schedule browser -------------------------------------------------
+
+  "ScheduleUserPreferencesFeature": { "IsOn": true },
+
+  "AddScheduleFeature": { "IsOn": true },
+
+  "DublicateScheduleFeature": { "IsOn": true },
+
+  "DublicateScheduleEffectivePeriodFeature": { "IsOn": true },
+
+  "CompareScheduleFeature": { "IsOn": true },
+
+  "MergeScheduleIntoExistingFeature": { "IsOn": true },
+
+  "MergeScheduleIntoNewFeature": { "IsOn": true },
+
+  "ArchiveScheduleFeature": { "IsOn": true },
+
+  "ExportScheduleFeature": { "IsOn": true },
+
+  "ExportDATXScheduleFeature": { "IsOn": true },
+
+  "ExportScheduleAuditFeature": { "IsOn": true },
+
+  "AddScheduleFromSPNFeature": { "IsOn": true },
+
+  "CopyScheduleNewDateRangePickerFeature": { "IsOn": true },
+
+  "ScheduleVersionFeature": { "IsOn": true },
+
+  "ImportASMFeature": { "IsOn": true },
+
+  "SuppressOnwardFlightForOvernightTurnsFeature": { "IsOn": true },
+
+  //-------end region Schedule browser -------------------------------------------------
+
+  "MyWorkspaceFeature": { "IsOn": true },
+
+  "PublicWorkspaceFeature": { "IsOn": true },
+
+  "NonForecastingDatasetsFeature": { "IsOn": true },
+
+  "StudiesForecastFilterFeature": { "IsOn": true },
+
+  "StudiesCapacityPlanFilterFeature": { "IsOn": false },
+
+  "StudiesViolationsNotificationFeature": { "IsOn": true },
+
+  "StudiesPublicWorkspaceFeature": { "IsOn": true },
+
+  "UpdateScheduleReferencedDatasets": { "IsOn": true },
+
+  "SkySymStudyTypes": { "IsOn": false },
+
+  //-------region Schedule Editor -------------------------------------------------
+  
+  "FinalizationFeature": { "IsOn": true },
+
+  "ScheduleModifyFeature": { "IsOn": true },
+
+  "ExtendACRegistrationEndOfRouteFeature": { "IsOn": false},
+
+  "ScheduleContextMenuFeature": { "IsOn": true },
+
+  "ScheduleDisplayModesFeature": { "IsOn": true },
+
+  "ScheduleCodeshareFeature": { "IsOn": true },
+
+  "ScheduleQuickSearchFeature": { "IsOn": true },
+
+  "ScheduleTurnBuilderFeature": { "IsOn": true },
+
+  "ScheduleStaticReportsFeature": { "IsOn": false },
+
+  "ScheduleTimeZoneFeature": { "IsOn": true },
+
+  "ExportToPredifinedPathFeature": { "IsOn": false },
+
+  "GroundEventEditorFeature": { "IsOn": true },
+
+  "FlightsEditorFeature": { "IsOn": true },
+
+  "FlightsEditorDockingFeature": { "IsOn": true },
+
+  "InventoryReportFeature": { "IsOn": true },
+
+  "RouteEditorFeature": { "IsOn": true },
+
+  "RouteEditorTemplateSelectorFeature": { "IsOn": true },
+
+  "AirportViewFeature": { "IsOn": true },
+
+  "ScheduleBalanceViewFeature": { "IsOn": true },
+
+  "PassengerItineraryViewFeature": { "IsOn": true },
+
+  "PassengerItineraryGenerationFeature": { "IsOn": true },
+
+  "PassengerConnectionFeature": { "IsOn": true },
+
+  "UtilityPanelFeature ": { "IsOn": true },
+
+  "UtilityPanelEditFeature": { "IsOn": true },
+
+  "UtilityPanelEditExtentFeature": { "IsOn": true },
+
+  "UtilityPanelScheduleParametersFeature": { "IsOn": true },
+
+  "UtilityPanelPaxItinGenerationFeature": { "IsOn": true },
+
+  "FlightActivityViewFeature": { "IsOn": true },
+
+  "GateActivityViewFeature": { "IsOn": true },
+
+  "GateGanttChartFeature": { "IsOn": true },
+
+  "AirportInformationViewFeature": { "IsOn": true },
+
+  "AdaptUtilityFeature": { "IsOn": true },
+
+  "FlightNumberGeneratorFeature": { "IsOn": true },
+
+  "RouteOptimizerFeature": { "IsOn": false },
+
+  //-------end region Schedule Editor -------------------------------------------------
+
+  "PermissionsFeature": { "IsOn": true },
+
+  "ResetStudyOnOutputCleanupFeature": { "IsOn": false },
+
+  "CapacityMonitorFeature": { "IsOn": true },
+
+  "OAuthFeature": { "IsOn": true },
+
+  "FourDigitEquipmentValidation": { "IsOn": true },
+
+  "ShowForecastOverlaysFeature": { "IsOn": true },
+
+  "ExternalSystemDatasetImport": { "IsOn": false },
+
+  "ReliabilityItinerariesOverlayFeature": { "IsOn": true },
+
+  "WorkspaceDefaultParametersFeature": { "IsOn": true },
+
+  "SlotMessagesFeature": { "IsOn": true },
+
+  "SlotModuleFeature": { "IsOn": true },
+
+  "WorkspaceDatasetVersionFeature": { "IsOn": true },
+
+  "ScenariosFeature": { "IsOn": true }
+}

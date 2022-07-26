@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "a46RMJizNAdfrwi6lPVmaN1ek3/+tBf6RD+nMA/X5Nw=",
+  "Source": "FeatureTogglingEnahancementWebApi",
+  "BasePath": "_content/FeatureTogglingEnahancementWebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

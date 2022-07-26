@@ -1,0 +1,5 @@
+{
+  "InitializeRuleEngineClientFeature": { "IsOn": true },
+
+  "RulesFeature": { "IsOn": true },
+}
