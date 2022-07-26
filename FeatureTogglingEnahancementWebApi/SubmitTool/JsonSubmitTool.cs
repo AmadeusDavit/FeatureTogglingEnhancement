@@ -2,6 +2,7 @@
 using FeatureTogglingEnahancementWebApi.Interfaces;
 using FeatureTogglingEnahancementWebApi.SubmitTool.SubmitToolInterface;
 using MongoDB.Driver;
+using Newtonsoft.Json;
 using System.Text.Json;
 
 namespace FeatureTogglingEnahancementWebApi.SubmitTool
@@ -10,12 +11,10 @@ namespace FeatureTogglingEnahancementWebApi.SubmitTool
     public class JsonSubmitTool : ISubmitTool
     {
         //CHANGE THE PATH IF NEEDED ITS NOT ABSOULTE YET
-        private const string pathToJsonFile = "C:/Users/dkazaryan/Desktop/FeatureToggling/ToggleFeaturesTest.txt";
+        private const string pathToJsonFile = "C:/Users/dkazaryan/Desktop/VsGarbage/FeatureTogglingEnahancementWebApi/FeatureToggling/ToggleFeaturesTest.txt";
         private const string connectionLink = "mongodb://localhost:27017";
         private const string databaseName = "features";
         private IMongoCollection<ToggleFeature> _collection;
-
-        List<ToggleFeature>? items;
 
         public JsonSubmitTool()
         {
@@ -28,20 +27,21 @@ namespace FeatureTogglingEnahancementWebApi.SubmitTool
         private FilterDefinitionBuilder<ToggleFeature> filterDefinitionBuilder =
         new FilterDefinitionBuilder<ToggleFeature>();
 
+        List<ToggleFeature> a;
+
         public void LoadJson()
         {
             using (StreamReader r = new StreamReader(pathToJsonFile))
             {
                 string json = r.ReadToEnd();
-                items = JsonSerializer.Deserialize<List<ToggleFeature>>(json);
+                a = System.Text.Json.JsonSerializer.Deserialize<List<ToggleFeature>>(json);
             }
-
         }
 
         //IList<BaseFeature> features)
         public async Task CreateManyFeaturesAsync()
         {
-            await _collection.InsertManyAsync(items);
+            await _collection.InsertManyAsync(a);
         }
 
         public async void CreateSingleFeatureAsync(ToggleFeature feature)

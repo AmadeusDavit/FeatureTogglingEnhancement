@@ -9,6 +9,7 @@
       "FeatureTogglingEnahancementWebApi/1.0.0": {
         "dependencies": {
           "MongoDB.Driver": "2.17.0",
+          "Newtonsoft.Json": "13.0.1",
           "Swashbuckle.AspNetCore": "6.2.3"
         },
         "runtime": {
@@ -143,6 +144,14 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
       "SharpCompress/0.30.1": {
         "runtime": {
           "lib/net5.0/SharpCompress.dll": {
@@ -268,6 +277,13 @@
       "sha512": "sha512-JQrfonPIGey2n38tYmhkYOjmoHeGCwvbEru/G7zciYcx198neZerSPylIt6kTGtpGQDMhjCg0Nvt9eCBm6TWZQ==",
       "path": "mongodb.libmongocrypt/1.5.4",
       "hashPath": "mongodb.libmongocrypt.1.5.4.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "SharpCompress/0.30.1": {
       "type": "package",
