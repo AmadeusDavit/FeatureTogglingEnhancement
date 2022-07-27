@@ -4,6 +4,7 @@ using FeatureTogglingEnahancementWebApi.Interfaces;
 using FeatureTogglingEnahancementWebApi.SubmitTool;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration.EnvironmentVariables;
+using MongoDB.Bson.Serialization.Conventions;
 using MongoDB.Driver;
 
 namespace FeatureTogglingEnahancementWebApi.Repositories
@@ -14,24 +15,23 @@ namespace FeatureTogglingEnahancementWebApi.Repositories
     {
         private const string connectionLink = "mongodb://localhost:27017";
         private const string databaseName = "test";
-        private IMongoCollection<ToggleFeature> _collection;
+        private IMongoCollection<FeatureDAO> _collection;
 
         public MongoRepository()
         {
             var client = new MongoClient(connectionLink);
             var db = client.GetDatabase(databaseName);
-            _collection = db.GetCollection<ToggleFeature>("Features");
-            var a = _collection.CountDocuments(FilterDefinitionBuilder.Empty);
+            _collection = db.GetCollection<FeatureDAO>("Features");
         }
 
-        private FilterDefinitionBuilder<ToggleFeature> FilterDefinitionBuilder =
-        new FilterDefinitionBuilder<ToggleFeature>();
+        private FilterDefinitionBuilder<FeatureDAO> FilterDefinitionBuilder =
+        new FilterDefinitionBuilder<FeatureDAO>();
 
-        public async Task<IEnumerable<ToggleFeature>> GetAllFeaturesAsync()
+        public async Task<IEnumerable<FeatureDAO>> GetAllFeaturesAsync()
         {
             var filter = FilterDefinitionBuilder.Empty;
-            var featuresToReturn = (await (await _collection.FindAsync<ToggleFeature>(filter)).ToListAsync()).Select(p => FeatureService.CreateFeature(p));
-            return (IEnumerable<ToggleFeature>)featuresToReturn;
+            var featuresToReturn = await (await _collection.FindAsync<FeatureDAO>(filter)).ToListAsync();
+            return featuresToReturn;
         }
 
         public async Task<ToggleFeature> GetFeaturesByNameAsync(string name)
@@ -40,7 +40,7 @@ namespace FeatureTogglingEnahancementWebApi.Repositories
             //temp
             var filter = FilterDefinitionBuilder.Empty;
             var featureToReturn = await _collection.FindAsync(filter);
-            return await featureToReturn.SingleOrDefaultAsync();
+            return (ToggleFeature)await featureToReturn.SingleOrDefaultAsync();
         }
     }
 }

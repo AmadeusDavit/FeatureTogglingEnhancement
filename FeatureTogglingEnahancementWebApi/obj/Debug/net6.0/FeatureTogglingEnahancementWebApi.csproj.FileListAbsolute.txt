@@ -42,3 +42,4 @@ C:\Users\dkazaryan\Desktop\VsGarbage\FeatureTogglingEnahancementWebApi\FeatureTo
 C:\Users\dkazaryan\Desktop\VsGarbage\FeatureTogglingEnahancementWebApi\FeatureTogglingEnahancementWebApi\obj\Debug\net6.0\FeatureTogglingEnahancementWebApi.genruntimeconfig.cache
 C:\Users\dkazaryan\Desktop\VsGarbage\FeatureTogglingEnahancementWebApi\FeatureTogglingEnahancementWebApi\obj\Debug\net6.0\ref\FeatureTogglingEnahancementWebApi.dll
 C:\Users\dkazaryan\Desktop\VsGarbage\FeatureTogglingEnahancementWebApi\FeatureTogglingEnahancementWebApi\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\dkazaryan\Desktop\VsGarbage\FeatureTogglingEnahancementWebApi\FeatureTogglingEnahancementWebApi\bin\Debug\net6.0\AngleSharp.dll

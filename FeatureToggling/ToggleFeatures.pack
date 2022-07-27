@@ -5,3 +5,14 @@
 
   "ScheduleDisplayModesFeature": { "IsOn": true },
 }
+
+
+
+template
+{
+    "_id" : ObjectId("62e11bd274214f5549cdebeb"),
+    "FeatureId" : 1,
+    "FinalizationFeature" : {
+        "IsOn" : true
+    }
+}
