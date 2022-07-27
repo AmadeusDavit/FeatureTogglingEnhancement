@@ -1,4 +1,5 @@
 ﻿using System.Dynamic;
+using FeatureTogglingEnahancementWebApi.Features;
 using FeatureTogglingEnahancementWebApi.Interfaces;
 using FeatureTogglingEnahancementWebApi.SubmitTool;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,7 @@ namespace FeatureTogglingEnahancementWebApi.Repositories
             var client = new MongoClient(connectionLink);
             var db = client.GetDatabase(databaseName);
             _collection = db.GetCollection<ToggleFeature>("Features");
+            var a = _collection.CountDocuments(FilterDefinitionBuilder.Empty);
         }
 
         private FilterDefinitionBuilder<ToggleFeature> FilterDefinitionBuilder =
@@ -28,8 +30,8 @@ namespace FeatureTogglingEnahancementWebApi.Repositories
         public async Task<IEnumerable<ToggleFeature>> GetAllFeaturesAsync()
         {
             var filter = FilterDefinitionBuilder.Empty;
-            var featuresToReturn = await _collection.FindAsync(filter);
-            return await featuresToReturn.ToListAsync();
+            var featuresToReturn = (await (await _collection.FindAsync<ToggleFeature>(filter)).ToListAsync()).Select(p => FeatureService.CreateFeature(p));
+            return (IEnumerable<ToggleFeature>)featuresToReturn;
         }
 
         public async Task<ToggleFeature> GetFeaturesByNameAsync(string name)
