@@ -1,5 +1,4 @@
-﻿using FeatureTogglingEnahancementWebApi.Entities;
-using FeatureTogglingEnahancementWebApi.Interfaces;
+﻿using FeatureTogglingEnahancementWebApi.Interfaces;
 using FeatureTogglingEnahancementWebApi.SubmitTool.SubmitToolInterface;
 using MongoDB.Driver;
 using Newtonsoft.Json;
@@ -51,7 +50,8 @@ namespace FeatureTogglingEnahancementWebApi.SubmitTool
 
         public async Task UpdateFeatureAsync(ToggleFeature feature)
         {
-            var filter = filterDefinitionBuilder.Eq(p => p.GetType, GetType);
+            //var filter = filterDefinitionBuilder.Eq(p => p.GetType, GetType);
+            var filter = filterDefinitionBuilder.Empty;
             await _collection.ReplaceOneAsync(filter, feature);
         }
     }

@@ -1,20 +1,27 @@
 ﻿
 using FeatureTogglingEnahancementWebApi.Interfaces;
 
-namespace Sky.Suite.Common.Infrastructure.Features.Models
+namespace FeatureTogglingEnahancementWebApi.Features
 {
+    //the bad thing is that the hierarchy should be defined;
     public class FinalizationFeature : ToggleFeature
     {
-        public bool IsOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private bool isOn = false;
+        public IList<ToggleFeature>? ChildFeatures { get; set; }
+        public bool IsOn { get => isOn; set => isOn = value; }
     }
 
     public class ScheduleModifyFeature : ToggleFeature
     {
-        public bool IsOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private bool isOn = false;
+        public IList<ToggleFeature>? ChildFeatures { get; set; }
+        public bool IsOn { get => isOn; set => isOn = value; }
     }
 
     public class ScheduleDisplayModesFeature : ToggleFeature
     {
-        public bool IsOn { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private bool isOn = false;
+        public IList<ToggleFeature>? ChildFeatures { get; set; }
+        public bool IsOn  {get => isOn; set => isOn = value; }
     }
 }

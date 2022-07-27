@@ -1,5 +1,4 @@
-﻿using FeatureTogglingEnahancementWebApi.Entities;
-using FeatureTogglingEnahancementWebApi.Interfaces;
+﻿using FeatureTogglingEnahancementWebApi.Interfaces;
 
 namespace FeatureTogglingEnahancementWebApi.SubmitTool.SubmitToolInterface
 {

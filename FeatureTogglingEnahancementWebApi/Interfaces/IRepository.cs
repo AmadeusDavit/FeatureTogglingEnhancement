@@ -1,5 +1,4 @@
-﻿using FeatureTogglingEnahancementWebApi.Entities;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace FeatureTogglingEnahancementWebApi.Interfaces
 {
