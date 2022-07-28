@@ -1,7 +1,6 @@
 ﻿using System.Dynamic;
 using FeatureTogglingEnahancementWebApi.Features;
 using FeatureTogglingEnahancementWebApi.Interfaces;
-using FeatureTogglingEnahancementWebApi.SubmitTool;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration.EnvironmentVariables;
 using MongoDB.Bson.Serialization.Conventions;
@@ -17,11 +16,15 @@ namespace FeatureTogglingEnahancementWebApi.Repositories
         private const string databaseName = "test";
         private IMongoCollection<FeatureDAO> _collection;
 
+        public long numberOfFeatures { get; set; }
+
         public MongoRepository()
         {
             var client = new MongoClient(connectionLink);
             var db = client.GetDatabase(databaseName);
             _collection = db.GetCollection<FeatureDAO>("Features");
+
+            numberOfFeatures = _collection.Count(FilterDefinitionBuilder.Empty);
         }
 
         private FilterDefinitionBuilder<FeatureDAO> FilterDefinitionBuilder =

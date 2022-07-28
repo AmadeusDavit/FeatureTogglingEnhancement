@@ -1,7 +1,8 @@
-﻿using FeatureTogglingEnahancementWebApi.Interfaces;
-using FeatureTogglingEnahancementWebApi.SubmitTool.SubmitToolInterface;
+﻿using FeatureTogglingEnahancementWebApi.SubmitTool.SubmitToolInterface;
 using MongoDB.Driver;
+using MongoSubmitTool.Models;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Text.Json;
 
 namespace FeatureTogglingEnahancementWebApi.SubmitTool
@@ -10,30 +11,31 @@ namespace FeatureTogglingEnahancementWebApi.SubmitTool
     public class JsonSubmitTool : ISubmitTool
     {
         //CHANGE THE PATH IF NEEDED ITS NOT ABSOULTE YET
-        private const string pathToJsonFile = "C:/Users/dkazaryan/Desktop/VsGarbage/FeatureTogglingEnahancementWebApi/FeatureToggling/ToggleFeaturesTest.txt";
+        private const string pathToJsonFile = "C:/Users/dkazaryan/Desktop/ToMongo.txt";
         private const string connectionLink = "mongodb://localhost:27017";
-        private const string databaseName = "features";
-        private IMongoCollection<ToggleFeature> _collection;
+        private const string databaseName = "test";
+        private IMongoCollection<FeatureModel> _collection;
 
         public JsonSubmitTool()
         {
             var client = new MongoClient(connectionLink);
             var db = client.GetDatabase(databaseName);
-            _collection = db.GetCollection<ToggleFeature>("features");
+            _collection = db.GetCollection<FeatureModel>("Features");
             LoadJson();
         }
 
-        private FilterDefinitionBuilder<ToggleFeature> filterDefinitionBuilder =
-        new FilterDefinitionBuilder<ToggleFeature>();
+        private FilterDefinitionBuilder<FeatureModel> filterDefinitionBuilder =
+        new FilterDefinitionBuilder<FeatureModel>();
 
-        List<ToggleFeature> a;
+        List<FeatureModel> a;
 
-        public void LoadJson()
+        private void LoadJson()
         {
+            string json;
             using (StreamReader r = new StreamReader(pathToJsonFile))
             {
-                string json = r.ReadToEnd();
-                a = System.Text.Json.JsonSerializer.Deserialize<List<ToggleFeature>>(json);
+                json = r.ReadToEnd();
+                a = System.Text.Json.JsonSerializer.Deserialize<List<FeatureModel>>(json);
             }
         }
 
@@ -43,12 +45,12 @@ namespace FeatureTogglingEnahancementWebApi.SubmitTool
             await _collection.InsertManyAsync(a);
         }
 
-        public async void CreateSingleFeatureAsync(ToggleFeature feature)
+        public async void CreateSingleFeatureAsync(FeatureModel feature)
         {
             await _collection.InsertOneAsync(feature);
         }
 
-        public async Task UpdateFeatureAsync(ToggleFeature feature)
+        public async Task UpdateFeatureAsync(FeatureModel feature)
         {
             //var filter = filterDefinitionBuilder.Eq(p => p.GetType, GetType);
             var filter = filterDefinitionBuilder.Empty;
